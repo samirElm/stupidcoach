@@ -1,0 +1,28 @@
+
+<div class="text-center">
+  <h3>Question:</h3>
+  <%= @query %>
+
+  <h3>Answer:</h3>
+  <% if @query.downcase == "i am going to work right now!" %>
+      <p>
+        <i class="fa fa-thumbs-o-up"></i>
+        <%= 'Good job boy !' %>
+      </p>
+    <% elsif @query.end_with?("?") %>
+    <p>
+      <i class="fa fa-thumbs-o-down"></i>
+      <%= "Silly question, get dressed and go to work!" %>
+    </p>
+    <% else %>
+    <p>
+      <i class="fa fa-thumbs-o-down"></i>
+      <%= "I don't care, get dressed and go to work!" %>
+    </p>
+    <% end %>
+
+
+  <%= link_to "Add a new question", "/coaching/ask", class: "btn btn-primary" %>
+</div>
+
+
